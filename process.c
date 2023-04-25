@@ -3,14 +3,13 @@
  * process - recieves input with arguments and print formatted string
  * @format: designation format
  * @func: list of possible functions
- * @arg: list of arguments
+ * @args: list of arguments
  *
  * Return: total count of character printed
  */
 int process(const char *format, conver_t func[], va_list args)
 {
 	int a, b, value, p_result;
-	
 	p_result = 0;
 	for (a = 0; format[a] != '\0'; a++)
 	{
@@ -18,7 +17,7 @@ int process(const char *format, conver_t func[], va_list args)
 		{
 			for (b = 0; func[b].sym != NULL; b++)
 			{
-				if (format [a + 1] == func[b].sym[0])
+				if (format[a + 1] == func[b].sym[0])
 				{
 					value = func[b].f(args);
 					if (value == -1)
