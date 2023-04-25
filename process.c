@@ -12,7 +12,6 @@ int process(const char *format, conver_t func[], va_list args)
 	int a, b, value, p_result;
 
 	p_result = 0;
-
 	for (a = 0; format[a] != '\0'; a++)
 	{
 		if (format[a] == '%')
