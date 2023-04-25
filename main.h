@@ -21,7 +21,7 @@ typedef struct convert conver_t;
 /*Main functions*/
 int process(const char *format, conver_t func[], va_list args);
 int _printf(const char *format, ...);
-int _putchar(char);
+int _putchar(char c);
 int print_char(va_list);
 int print_string(va_list);
 int print_percent(va_list);
