@@ -11,7 +11,7 @@ int _printf(const char *format, ...)
 {
 	int result;
 	conver_t func[] = {{"c", print_char}, {"s", print_string},
-	{"%", print_percent}, {"d", print_int},
+	{"%", print_percent}, {"d", print_int}, {"i", print_int},
 	{"u", unsigned_int}, {NULL, NULL}};
 	va_list args;
 
