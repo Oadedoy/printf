@@ -10,7 +10,8 @@
 int _printf(const char *format, ...)
 {
 	int result;
-	conver_t func[] = {{"c", print_char}, {"s", print_string}, {"%", print_percent}, {NULL, NULL}};
+	conver_t func[] = {{"c", print_char}, {"s", print_string},
+	{"%", print_percent}, {NULL, NULL}};
 	va_list args;
 
 	if (format == NULL)
