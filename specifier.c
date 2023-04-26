@@ -69,23 +69,3 @@ int unsigned_int(va_list args)
 		return (-1);
 	return (print_unsigned_int(num));
 }
-
-/**
- * print_binary - Prints an unsigned integer in binary
- * @args: list of arguments
- * Return: returns the total characters printed
- */
-int print_binary(va_list args)
-{
-	unsigned int num = va_arg(args, unsigned int);
-	int binary[32];
-	int i = 0;
-
-	while (num > 0)
-	{
-		binary[i] = num % 2;
-		num = num / 2;
-		i++;
-	}
-	return (1);
-}
