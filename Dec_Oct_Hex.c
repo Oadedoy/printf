@@ -83,7 +83,7 @@ int print_hexadecimal(va_list args)
  * @args: List of arguments
  * Return: The length of the number printed
  */
-#define BUFF_SIZE 1024
+
 int print_hexa_upper(va_list args)
 {
 	return (print_hexa(args, "0123456789ABCDEF"));

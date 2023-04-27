@@ -4,7 +4,7 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <stdarg.h>
-
+#define BUFF_SIZE 1024
 /**
 * struct convert - defines a structure for symbols and functions
 *
