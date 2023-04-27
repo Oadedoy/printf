@@ -32,8 +32,10 @@ int print_reversed(va_list arg);
 int rot13(va_list);
 int unsigned_int(va_list);
 int print_octal(va_list list);
+int print_hexa(va_list types, char map_to[]);
 int print_hex(va_list list);
-int print_heX(va_list list);
+int print_hexadecimal(va_list list);
+int print_hexa_upper(va_list list);
 
 /*Helper functions*/
 unsigned int base_len(unsigned int, int);
