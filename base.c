@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include "main.h"
 
 /**
@@ -34,7 +35,10 @@ int print_binary(va_list args)
 	str[i] = '\0';
 	r_str = rev_string(str);
 	if (r_str == NULL)
+	{
+		free(str);
 		return (-1);
+	}
 	write_base(r_str);
 	free(str);
 	free(r_str);
@@ -88,6 +92,7 @@ int print_octal(va_list args)
 */
 int print_hex(va_list args)
 {
+	int hex_check(int num, char x);
 	unsigned int num;
 	int len, n_num;
 	char *hex_rep;
@@ -132,6 +137,7 @@ int print_hex(va_list args)
 */
 int print_heX(va_list args)
 {
+	int hex_check(int num, char x);
 	unsigned int num;
 	int len, n_num;
 	char *hex_rep;

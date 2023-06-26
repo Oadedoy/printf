@@ -26,6 +26,8 @@ int print_pointer(va_list args)
 
 			len += _putchar(map_to[digit]);
 			new_value /= 16;
+			len++;
 		}
 	}
+	return (len);
 }
