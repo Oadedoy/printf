@@ -24,7 +24,7 @@ int print_reversed(va_list args)
  * @args: strings to be rot13'ed
  * Return: converted string
  */
-int rot13(va_list args)
+int print_rot13(va_list args)
 {
 	int a, b;
 	char *string;
