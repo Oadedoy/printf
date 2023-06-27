@@ -7,8 +7,8 @@
 int print_reversed(va_list args)
 {
 	int length;
-	int *string;
-	int *ptr;
+	char *string;
+	char *ptr;
 
 	string = va_arg(args, char *);
 	ptr = rev_string(string);

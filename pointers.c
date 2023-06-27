@@ -9,5 +9,5 @@ int print_pointer(va_list args)
 	void *ptr = va_arg(args, void *);
 	unsigned long int value = (unsigned long int)ptr;
 
-	return (print_hex(value));
+	return (print_hex(ptr));
 }

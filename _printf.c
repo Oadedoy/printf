@@ -13,7 +13,7 @@ int _printf(const char *format, ...)
 	conver_t func[] = {{"c", print_char}, {"s", print_string},
 	{"%", print_percent}, {"d", print_int}, {"i", print_int},
 	{"u", unsigned_int}, {"b", print_binary}, {"o", print_octal},
-	{"x", print_hex}, {"X", print_heX},
+	{"x", print_hex}, {"X", print_heX}, {"r", print_reversed},
 	{NULL, NULL}};
 	va_list args;
 
