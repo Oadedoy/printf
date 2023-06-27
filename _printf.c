@@ -14,7 +14,7 @@ int _printf(const char *format, ...)
 	{"%", print_percent}, {"d", print_int}, {"i", print_int},
 	{"u", unsigned_int}, {"b", print_binary}, {"o", print_octal},
 	{"x", print_hex}, {"X", print_heX}, {"r", print_reversed},
-	{NULL, NULL}};
+	{"R", print_rot13}, {NULL, NULL}};
 	va_list args;
 
 	if (format == NULL)
