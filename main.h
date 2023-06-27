@@ -29,7 +29,7 @@ int print_pointer(va_list);
 int print_int(va_list);
 int print_number(va_list);
 int print_binary(va_list);
-int print_reversed(va_list arg);
+int print_reversed(va_list args);
 int rot13(va_list);
 int unsigned_int(va_list);
 int print_octal(va_list list);
