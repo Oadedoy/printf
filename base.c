@@ -46,8 +46,7 @@ int print_binary(va_list args)
 }
 
 /**
- * print_octal - Prints the numeric representation 
- * 				of a number in base 8
+ * print_octal - Prints the numeric representation of a number in base 8
  * @args: list of all the arguments passed to the program
  * Return: len
 */
@@ -77,7 +76,7 @@ int print_octal(va_list args)
 	r_str = rev_string(octal);
 	if (r_str == NULL)
 		return (-1);
-	
+
 	write_base(r_str);
 	free(octal);
 	free(r_str);
@@ -85,8 +84,7 @@ int print_octal(va_list args)
 }
 
 /**
- * hex_check - checks which hexadecimal function 
- * 				calling it
+ * hex_check - checks which hexadecimal function calling it
  * @num : integer to be converted to characters
  * @x: tells which hex function is calling it
  * Return: ASCII value for a character
@@ -100,13 +98,12 @@ int hex_check(int num, char x)
 	if (x == 'x')
 		return (hex[num]);
 	else
-		return(heX[num]);
+		return (heX[num]);
 	return (0);
 }
 
 /**
- * print_hex - Prints a representation of a
- * 			decinal number in base 16 lowercase
+ * print_hex - Prints a representation of a decinal number in base 16 lowercase
  * @args: List of arguments passed to the function
  * Return: Number of characters printed
 */
@@ -120,7 +117,7 @@ int print_hex(va_list args)
 
 	num = va_arg(args, unsigned int);
 	if (num == 0)
-		return(_putchar('0'));
+		return (_putchar('0'));
 	if (num < 1)
 		return (-1);
 	len = base_len(num, 16);
@@ -131,10 +128,10 @@ int print_hex(va_list args)
 	{
 		n_num = num % 16;
 		if (n_num > 9)
-			{
-				n_num = hex_check(n_num, 'x');
-				hex_rep[len] = n_num;
-			}
+		{
+			n_num = hex_check(n_num, 'x');
+			hex_rep[len] = n_num;
+		}
 		else
 			hex_rep[len] = n_num + 48;
 		num /= 16;
@@ -150,8 +147,7 @@ int print_hex(va_list args)
 }
 
 /**
- * print_heX - Prints a representation of a
- * 			decinal number in base 16 uppercase
+ * print_heX - Prints a representation of a decinal number in base 16 uppercase
  * @args: List of arguments passed to the function
  * Return: Number of characters printed
 */
@@ -164,7 +160,7 @@ int print_heX(va_list args)
 
 	num = va_arg(args, unsigned int);
 	if (num == 0)
-		return(_putchar('0'));
+		return (_putchar('0'));
 	if (num < 1)
 		return (-1);
 	len = base_len(num, 16);
@@ -175,10 +171,10 @@ int print_heX(va_list args)
 	{
 		n_num = num % 16;
 		if (n_num > 9)
-			{
-				n_num = hex_check(n_num, 'X');
-				hex_rep[len] = n_num;
-			}
+		{
+			n_num = hex_check(n_num, 'X');
+			hex_rep[len] = n_num;
+		}
 		else
 			hex_rep[len] = n_num + 48;
 		num /= 16;

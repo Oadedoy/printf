@@ -62,7 +62,7 @@ unsigned int base_len(unsigned int num, int base)
 /**
  * _memcpy - fuction that copies memeory area
  * @dest: destination
- * @scr: source
+ * @src: source
  * @n: number of bytes to copy
  * Return: returns a pointer to dest
  */
