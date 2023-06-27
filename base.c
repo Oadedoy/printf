@@ -85,6 +85,26 @@ int print_octal(va_list args)
 }
 
 /**
+ * hex_check - checks which hexadecimal function 
+ * 				calling it
+ * @num : integer to be converted to characters
+ * @x: tells which hex function is calling it
+ * Return: ASCII value for a character
+*/
+int hex_check(int num, char x)
+{
+	char *hex = "abcdef";
+	char *heX = "ABCDEF";
+
+	num -= 10;
+	if (x == 'x')
+		return (hex[num]);
+	else
+		return(heX[num]);
+	return (0);
+}
+
+/**
  * print_hex - Prints a representation of a
  * 			decinal number in base 16 lowercase
  * @args: List of arguments passed to the function
@@ -172,24 +192,4 @@ int print_heX(va_list args)
 	free(hex_rep);
 	free(r_str);
 	return (len);
-}
-
-/**
- * hex_check - checks which hexadecimal function 
- * 				calling it
- * @num : integer to be converted to characters
- * @x: tells which hex function is calling it
- * Return: ASCII value for a character
-*/
-int hex_check(int num, char x)
-{
-	char *hex = "abcdef";
-	char *heX = "ABCDEF";
-
-	num -= 10;
-	if (x == 'x')
-		return (hex[num]);
-	else
-		return(heX[num]);
-	return (0);
 }
