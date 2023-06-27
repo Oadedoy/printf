@@ -129,7 +129,7 @@ int print_hex(va_list args)
 		return (-1);
 	for (len = 0; num > 0; len++)
 	{
-		n_num %= 16;
+		n_num = num % 16;
 		if (n_num > 9)
 			{
 				n_num = hex_check(n_num, 'x');
@@ -137,7 +137,7 @@ int print_hex(va_list args)
 			}
 		else
 			hex_rep[len] = n_num + 48;
-			num /= 16;
+		num /= 16;
 	}
 	hex_rep[len] = '\0';
 	r_str = rev_string(hex_rep);
@@ -157,7 +157,6 @@ int print_hex(va_list args)
 */
 int print_heX(va_list args)
 {
-	int hex_check(int num, char x);
 	unsigned int num;
 	int len, n_num;
 	char *hex_rep;
@@ -174,7 +173,7 @@ int print_heX(va_list args)
 		return (-1);
 	for (len = 0; num > 0; len++)
 	{
-		n_num %= 16;
+		n_num = num % 16;
 		if (n_num > 9)
 			{
 				n_num = hex_check(n_num, 'X');
@@ -182,7 +181,7 @@ int print_heX(va_list args)
 			}
 		else
 			hex_rep[len] = n_num + 48;
-			num /= 16;
+		num /= 16;
 	}
 	hex_rep[len] = '\0';
 	r_str = rev_string(hex_rep);
