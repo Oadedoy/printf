@@ -48,3 +48,4 @@ int process(const char *format, conver_t func[], va_list args)
 	}
 	return (p_result);
 }
+

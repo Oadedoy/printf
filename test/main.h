@@ -25,7 +25,7 @@ int _putchar(char c);
 int print_char(va_list);
 int print_string(va_list);
 int print_percent(va_list);
-int print_pointer(va_list);
+int print_pointer(va_list args);
 int print_int(va_list);
 int print_number(va_list);
 int print_binary(va_list);
@@ -33,7 +33,7 @@ int print_reversed(va_list);
 int print_rot13(va_list);
 int unsigned_int(va_list);
 int print_octal(va_list list);
-int print_hex(va_list args);
+int print_hex(va_list, int *args);
 int hex_check(int num, char x);
 int print_heX(va_list list);
 

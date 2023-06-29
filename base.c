@@ -109,7 +109,6 @@ int hex_check(int num, char x)
 */
 int print_hex(va_list args)
 {
-	int hex_check(int num, char x);
 	unsigned int num;
 	int len, n_num;
 	char *hex_rep;
@@ -145,6 +144,7 @@ int print_hex(va_list args)
 	free(r_str);
 	return (len);
 }
+
 
 /**
  * print_heX - Prints a representation of a decinal number in base 16 uppercase

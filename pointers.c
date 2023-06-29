@@ -4,38 +4,26 @@
  * @args: list of arguments
  * Return: returns the total of characters printed
  */
-void print_pointer(va_list args)
+int print_pointer(va_list args)
 {
-	void *ptr = va_arg(args, void *);
-	unsigned long int value;
-	int i;
+	void *ptr;
+	char *string = "(nil)";
+	int i; int numDigits;
+	long int value;
 
+	ptr = va_arg(args, void *);
 	if (ptr == NULL)
 	{
-		const char *nilString = "(nil)";
-
-		while (*nilString != '\0')
+		for (i = 0; string[i] != '\0'; i++)
 		{
-			_putchar(*nilString);
-			nilString++;
+			_putchar(string[i]);
 		}
-		return;
+		return (i);
 	}
-	value = (unsigned long int)ptr;
 
+	value = (unsigned long int)ptr;
 	_putchar('0');
 	_putchar('x');
-	for (i = (sizeof(void *) * 2) - 1; i >= 0; i--)
-	{
-	unsigned long int digitValue = (value >> (4 * i)) & 0xF;
-
-	if (digitValue < 10)
-	{
-		_putchar('0' + digitValue);
-	}
-	else
-	{
-		_putchar('A' + digitValue - 10);
-	}
-	}
+	numDigits = print_hex(value);
+	return(numDigits + 2);
 }

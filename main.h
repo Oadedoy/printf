@@ -25,7 +25,7 @@ int _putchar(char c);
 int print_char(va_list);
 int print_string(va_list);
 int print_percent(va_list);
-void print_pointer(va_list);
+int print_pointer(va_list);
 int print_int(va_list);
 int print_number(va_list);
 int print_binary(va_list);
