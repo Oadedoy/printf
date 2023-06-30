@@ -1,36 +1,42 @@
 #include "main.h"
 
 /**
- * printf_hex_aux - prints an hexgecimal number.
- * @num: arguments.
- * Return: counter.
+ * print_exclusive_string - prints a string with ASCII
+ * @format: arguments.
+ * Return: the string length
  */
-int printf_hex_aux(unsigned long int num)
+int print_exclusive_string(const char *format, ...)
 {
-	long int i;
-	long int *array;
-	long int counter = 0;
-	unsigned long int temp = num;
+	va_list args;
+	char *s;
+	int i, len = 0;
+	int cast;
 
-	while (num / 16 != 0)
+	va_start(args, format);
+	s = va_arg(args, char *);
+	if (s == NULL)
+		s = "(null)";
+	for (i = 0; s[i] != '\0'; i++)
 	{
-		num /= 16;
-		counter++;
+		if (s[i] < 32 || s[i] >= 127)
+		{
+			_putchar('\\');
+			_putchar('x');
+			len = len + 2;
+			cast = s[i];
+			if (cast < 16)
+			{
+				_putchar('0');
+				len++;
+			}
+			len = len + print_hex_helper(cast);
+		}
+		else
+		{
+			_putchar(s[i]);
+			len++;
+		}
 	}
-	counter++;
-	array = malloc(counter * sizeof(long int));
-
-	for (i = 0; i < counter; i++)
-	{
-		array[i] = temp % 16;
-		temp /= 16;
-	}
-	for (i = counter - 1; i >= 0; i--)
-	{
-		if (array[i] > 9)
-			array[i] = array[i] + 39;
-		_putchar(array[i] + '0');
-	}
-	free(array);
-	return (counter);
+	va_end(args);
+	return (len);
 }
